@@ -1,0 +1,63 @@
+.section-header p {
+  width: 100%;
+} 
+#services {
+  padding-top: 120px !important;
+}
+.sepText {
+  width: 75px;
+  background: #f5f8fd;
+  margin: -15px 0 0 -38px;
+  padding: 5px 0;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-size: smaller;
+}
+.hr {
+  width: 2px;
+  height: 150px;
+  background-color: #dddddd;
+  position: inherit;
+  top: 0px;
+  left: 75px;
+  z-index: 10;
+}
+
+#passwordsGroup {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.form-control {
+  height: 2.75rem !important;
+}
+
+.input-group-prepend{
+  height: 2.75rem !important;
+}
+
+.invalid-feedback, .invalid-feedback-custom{
+  padding-left: 4rem;
+}
+
+.invalid-feedback-custom{
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+@media only screen and (max-width: 999px) {
+  .hr {
+    width: 100%;
+    height: 2px;
+    left: 0;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+  .sepText {
+    left: 50%;
+    background-color: #f5f8fd;
+  }
+}

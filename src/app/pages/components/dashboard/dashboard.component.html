@@ -1,0 +1,61 @@
+<section id="services" class="section-bg">
+  <div class="container-fluid">
+    <!-- <header class="section-header">
+        <h3>Thanks for downloading!</h3>
+        <p>
+          Your photo should download automatically. If not <a href="#">click here</a> to get your copy.
+        </p>
+        <div class="row">
+          <div class="col-12 text-center">
+            
+            <a href="https://www.buymeacoffee.com/2x2photo" target="_blank"><img src="assets/img/default-green.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+            </a>
+          
+  
+          </div>
+        </div>
+      </header> -->
+    <div class="row">
+      <div class="col-2" style="background-color: #203058; min-height: 90vh">
+        <div class="tab">
+          <span style="color: white; padding-left: 5%"
+            >Hi, {{ firstName }}</span
+          >
+          <a href="../../user/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+          <a routerLink="../../user/payments"><i class="fa fa-fw fa-tag"></i> Payments</a>
+          <a routerLink="../../user/profile"><i class="fa fa-fw fa-cog"></i> Profile</a>
+          <button type="button" (click)="onSignOut()">
+            <i class="fa fa-fw fa-sign-out"></i> Sign out
+          </button>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="tabcontent">
+          <div class="alert alert-danger" role="alert">
+            Please activate subscription to use the service.
+          </div>
+          <div class="card" style="width: 80vw">
+            <div class="card-body">
+              <h5 class="card-title">PAYMENT</h5>
+              <p class="card-text">Your payment is due $99.99</p>
+              <p class="pay-status">
+                <span class="text-danger"
+                  ><strong>Status:</strong> Not Active</span
+                ><br />
+                <strong>Recurring payment:</strong> Not Active<br />
+                <strong>Subscription expiry date:</strong> Jun 1, 2020<br />
+                <strong>Price:</strong> $99.99 USD / Month<br />
+              </p>
+              <!-- <a href="#" class="btn btn-primary">Pay Now</a> -->
+
+              <div style="width: 25%;" class="text-muted">
+                <span>Subscribe now </span>
+                <div id="paypal-button-container" class="mt-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,319 @@
+<section id="services" class="section-bg" style="min-height: 90vh">
+  <div class="container">
+    <header class="section-header">
+      <h3>Membership</h3>
+      <p>$99.99 USD / Month to get unlimited passport size (2 x 2) photos.
+      <span class="text-success text-center" *ngIf="isSuccess"><br/><br/>Your account has been created, please verify it by clicking on the activation link that has been sent to your email.</span></p>
+    </header>
+    <div class="row align-items-center">
+      <!-- Begin Login Form -->
+      <div class="col-md-5 col-lg-5" id="frmLogin" [hidden]="isLoginDisplayed">
+        <h2>Login</h2>
+        <form [formGroup]="formLogin" (ngSubmit)="onLogin()" class="mt-5">
+          <div class="row">
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-envelope text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control bg-white border-md"
+                id="email"
+                placeholder="Email Address"
+                [ngClass]="{
+                  'is-invalid': loginSubmitted && frm.email.errors
+                }"
+                formControlName="email"
+              />
+              <div *ngIf="loginSubmitted && frm.email.errors" class="invalid-feedback">
+                <small *ngIf="frm.email.errors.required">Email is required</small>
+                <small *ngIf="frm.email.errors.email">Email is not valid</small>
+              </div>
+            </div>
+            
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-lock text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="password"
+                class="form-control bg-white border-md"
+                id="password"
+                placeholder="Password"
+                [ngClass]="{
+                  'is-invalid': loginSubmitted && frm.password.errors
+                }"
+                formControlName="password"
+                minlength="8"
+              />
+              <div *ngIf="loginSubmitted && frm.password.errors" class="invalid-feedback">
+                <small *ngIf="frm.password.errors.required">Password is required</small>
+                <small *ngIf="frm.password.errors.minlength">Password must be minimum of 8 characters</small>                
+              </div>
+            </div>
+            
+            <div class="form-group col-lg-12 mx-auto mb-0">
+              <button
+                type="submit"
+                class="btn btn-primary btn-block py-2 font-weight-bold"
+              >
+                Login
+              </button>
+            </div>
+            <div *ngIf="!isLoginSuccess" class="form-group col-lg-12 mx-auto mt-3 text-danger">
+              Incorrect email or password. 
+            </div>
+            <div class="form-group col-lg-12 mx-auto mt-3">
+              <a role="button" (click)="showForgotPassword();">Forgot password?</a>
+            </div>
+          </div>
+        </form> 
+      </div>
+      <!-- End Login Form -->
+      <!-- Begin Forgot Password Form -->
+      <div class="col-md-5 col-lg-5" id="frmForgotPassword" [hidden]="isForgotPasswordDisplayed">
+        <h2>Forgot Password</h2>
+        <form [formGroup]="formLogin" (ngSubmit)="onLogin()" class="mt-5">
+          <div class="row">
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-envelope text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control bg-white border-md"
+                id="email"
+                placeholder="Email Address"
+                [ngClass]="{
+                  'is-invalid': loginSubmitted && frm.email.errors
+                }"
+                formControlName="email"
+              />
+              <div *ngIf="loginSubmitted && frm.email.errors" class="invalid-feedback">
+                <small *ngIf="frm.email.errors.required">Email is required</small>
+                <small *ngIf="frm.email.errors.email">Email is not valid</small>
+              </div>
+            </div>            
+          
+            <div class="form-group col-lg-12 mx-auto mb-0">
+              <button
+                type="submit"
+                class="btn btn-primary btn-block py-2 font-weight-bold"
+              >
+                Retrieve Login Info
+              </button>
+            </div>
+            <div *ngIf="!isLoginSuccess" class="form-group col-lg-12 mx-auto mt-3 text-danger">
+              Incorrect email or password. 
+            </div>
+          </div>
+        </form> 
+      </div>
+      <!-- End Forgot Password Form -->
+      <div class="col-md-2 col-lg-2">
+        <div class="hr">
+          <div class="sep">
+            <div class="sepText">OR</div>
+          </div>
+        </div>
+      </div>
+      <!-- Begin Registeration Form -->
+      <div class="col-md-5 col-lg-5">
+        <h2>Create an Account</h2>
+        <form
+          [formGroup]="formRegister"
+          (ngSubmit)="onUserRegister()"
+          class="mt-5"
+        >
+          <div class="row">
+            <!-- First Name -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-user text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control bg-white border-md"
+                id="firstName"
+                placeholder="First Name"
+                [ngClass]="{
+                  'is-invalid': submitted && f.firstName.errors
+                }"
+                formControlName="firstName"
+              />
+              <div
+                *ngIf="submitted && f.firstName.errors"
+                class="invalid-feedback"
+              >
+                <small *ngIf="f.firstName.errors.required"
+                  >First name is required</small
+                >
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-user text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control bg-white border-md"
+                id="lastName"
+                placeholder="Last Name"
+                [ngClass]="{
+                  'is-invalid': submitted && f.lastName.errors
+                }"
+                formControlName="lastName"
+              />
+              <div
+                *ngIf="submitted && f.lastName.errors"
+                class="invalid-feedback"
+              >
+                <small *ngIf="f.lastName.errors.required"
+                  >Last name is required</small
+                >
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-envelope text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control bg-white border-md"
+                id="email"
+                placeholder="Email Address"
+                [ngClass]="{
+                  'is-invalid': submitted && f.email.errors
+                }"
+                formControlName="email"
+                (blur) = "CheckEmailAvailbility()"
+                (focus) = "ClearStyles()"
+              />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <small *ngIf="f.email.errors.required">Email is required</small>
+                <small *ngIf="f.email.errors.email">Email is not valid</small>
+              </div>
+              <div *ngIf="emailCount !== 0" class="invalid-feedback-custom">
+                <small *ngIf="emailCount !== 0">Email already exists</small>
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-group col-lg-12 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-phone-square text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control bg-white border-md"
+                id="phone"
+                placeholder="Phone"
+                [ngClass]="{
+                  'is-invalid': submitted && f.phone.errors
+                }"
+                formControlName="phone"
+              />
+              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <small *ngIf="f.phone.errors.required">Phone is required</small>
+              </div>
+            </div>
+
+            <div class="form-group row" id="passwordsGroup" formGroupName="passwords">
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-lock text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="password"
+                class="form-control bg-white border-md"
+                id="password"
+                placeholder="Password"
+                minlength="8"
+                [ngClass]="{
+                  'is-invalid': submitted && f.passwords.get('password').errors
+                }"
+                formControlName="password"
+              />
+              <div *ngIf="f.passwords.get('password').errors" class="invalid-feedback">
+                <small *ngIf="f.passwords.get('password').errors.required">Password is required</small>     
+                <small *ngIf="f.passwords.get('password').errors.minlength">Password must be minimum of 8 characters</small>                
+              </div> 
+            </div>
+
+            <div class="input-group col-lg-6 mb-4">
+              <div class="input-group-prepend">
+                <span
+                  class="input-group-text bg-white px-4 border-md border-right-0"
+                >
+                  <i class="fa fa-lock text-muted"></i>
+                </span>
+              </div>
+              <input
+                type="password"
+                class="form-control bg-white border-md"
+                id="confirm_password"
+                placeholder="Confirmed Password"
+                [ngClass]="{
+                  'is-invalid': submitted && f.passwords.get('confirm_password').errors
+                }"
+                formControlName="confirm_password"
+              />
+              <div *ngIf="f.passwords.get('confirm_password').errors" class="invalid-feedback">
+                <small *ngIf="f.passwords.get('confirm_password').errors.required">Password is required</small>
+                <small *ngIf="f.passwords.get('confirm_password').errors.noMatch">Password does not match</small>
+              </div>
+            </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="form-group col-lg-12 mx-auto mb-0">
+              <button
+                type="submit"
+                class="btn btn-primary btn-block py-2 font-weight-bold"
+              >
+                Create your account
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Registration Form -->
+    </div>
+  </div>
+</section>

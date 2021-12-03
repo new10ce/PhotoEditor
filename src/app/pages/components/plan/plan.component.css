@@ -1,0 +1,46 @@
+#services {
+  padding-top: 120px !important;
+}
+label {
+  width: 100%;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card {
+  border: 0px;
+}
+
+.section-header p {
+  width: 75%;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 1220px) {
+  .price-plan {
+    margin-bottom: 10px;
+    font-size: 30px;
+    letter-spacing: -0.025em;
+  }
+}
+
+.pricing-list .list-item{
+    display: flex;
+    margin-bottom: 19px;
+}
+
+.list-item p{
+    text-align: left;
+    padding-bottom: 0px;
+} 
+
+.list-item i{
+    color: rgb(24, 211, 121);
+    margin-left: 20px;
+    margin-top: 3px;
+}
+
+.no-feature i{
+    color: rgb(237, 93, 81) !important;
+}

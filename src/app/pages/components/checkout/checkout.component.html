@@ -1,0 +1,137 @@
+<section id="services" class="section-bg shopping" style="min-height: 90vh">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="block billing-details">
+                  <h4 class="widget-title">Delivery Details</h4>
+                  <b>{{ customer.fullName }}</b><br/>
+                  {{ customer.address }}<br/>
+                  {{ customer.city }}, {{ customer.state }}<br/>
+                  {{ customer.country}} {{ customer.zipCode }}<br/>
+                  {{ customer.email }}<br/>
+                  {{ customer.phone }}<br/><br/>
+                  <button type="button" class="btn btn-blue" (click)="onCustomerEdit()">Edit</button>
+                </div>
+                <div class="block mt-5">
+                  <h4 class="widget-title">Shipping Method</h4>
+                  <div class="checkout-product-details">
+                    <div class="payment">
+                      <div class="card-details">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="shippingType"
+                            id="shippingType"
+                            value="Free"
+                            (change)="onShippingTypeChange($event)" 
+                            checked
+                          />
+                          <label
+                            ><strong>Free shipping</strong
+                            ><small> - ETA : 7-10 days.</small></label
+                          >
+                        </div>
+                        <div class="form-check half-width padding-right">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="shippingType"
+                            id="shippingType"
+                            value="Standard"
+                            (change)="onShippingTypeChange($event)" 
+                          />
+                          <label
+                            ><strong>Standard</strong
+                            ><small> (+5 USD) - ETA : 4-5 days.</small></label
+                          >
+                        </div>
+                        <div class="form-check half-width padding-left">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="shippingType"
+                            id="shippingType"
+                            value="Express"
+                            (change)="onShippingTypeChange($event)" 
+                          />
+                          <label
+                            ><strong>Express</strong
+                            ><small> (+10 USD) - ETA : 2-3 days.</small></label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-checkout-details">
+                  <div class="block">
+                    <h4 class="widget-title">Order Summary</h4>
+                    <div class="media product-card">
+                      <a class="pull-left" href="product-single.html">
+                        <img
+                          class="media-object"
+                          src="assets/img/about-img.jpg"
+                          alt="Image"
+                        />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading">
+                          <a href="product-single.html"
+                            >United States - Visa Photo</a
+                          >
+                        </h4>
+                        <p class="price">
+                          <!-- <select class="form-control"
+                          (change)='onPriceChange($event)'>
+                            <option value="12.99">6 photos</option>
+                            <option value="16.99">12 photos</option>
+                          </select> -->
+                          <select name="selectedItem" id="aantal" class="form-control" [(ngModel)]="selectedItem" (change)='onPriceChange($event)'>
+                            <option *ngFor="let option of ddlItems" [value]="option.id">{{option.name}}</option>
+                         </select>
+                        </p>
+                        <span class="remove">Remove</span>
+                      </div>
+                    </div>
+                    <div class="discount-code">
+                      <p>
+                        Have a discount ?
+                        <a
+                          data-toggle="modal"
+                          data-target="#coupon-modal"
+                          href="#!"
+                          >enter it here</a
+                        >
+                      </p>
+                    </div>
+                    <ul class="summary-prices">
+                      <li>
+                        <span>Subtotal:</span>
+                        <span class="price">${{price}}</span>
+                      </li>
+                      <li>
+                        <span>Shipping:</span>
+                        <span class="price">{{shippingTypePrice}}</span>
+                      </li>
+                    </ul>
+                    <div class="summary-total">
+                      <span>Total</span>
+                      <span>${{Total | number:'1.2-2' }}</span>
+                    </div>
+                    <div class="verified-icon">
+                      <div id="paypal-button-container"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

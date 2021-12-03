@@ -1,0 +1,169 @@
+<section id="services" class="section-bg" style="min-height: 90vh">
+  <div class="container">
+    <header class="section-header">
+      <div class="row">
+        <div class="col">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h4 class="card-title pricing-card-title">Professional 📸</h4>
+              <p>We Edit, Print & Mail your photos by post</p>
+              <button type="button" class="btn btn-blue" (click)="getPhotoPlan('professional')">
+                GET PHOTO PRINTS
+              </button>
+              <div class="mt-4 mb-3">
+                <span display="block" class="price-plan">$11.99 only</span>
+                <p>Takes ~30 seconds </p>
+             </div>
+             <div class="pricing-list">
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Compliance Check</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Printed on High Quality Paper</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Image Background correction</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Guaranteed 99.9% Acceptance rate</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Free Printing & Home delivery</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Upto 40+ photo prints</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Express shipping option (get in 2 days)</p>
+               </div>
+               <div class="list-item">
+                <i class="fa fa-check"></i>
+                <p>Digital download - get the retouched photo</p>
+               </div>               
+             </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h4 class="card-title pricing-card-title">
+                Automatic - AI 🤖 
+              </h4>
+              <p>Stay back while our AI creates your photo</p>
+              <button type="button" class="btn btn-blue" (click)="getPhotoPlan('ai')">
+                GET DIGITAL PHOTOS
+              </button>
+              <div class="mt-4">
+                <span display="block" class="price-plan">$2.99 only</span>
+                <p>Takes just 1 minute</p>
+              </div>
+              <div class="pricing-list">
+                <div class="list-item">
+                 <i class="fa fa-check"></i>
+                 <p>100% Biometric Gurantee</p>
+                </div>
+                <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Digital download - get the retouched photos immediately</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Automatic Image Background correction</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Get - 1 x Photo (less than 100kb) for online applications</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Get - 1 x HD Photo for online applications</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Get - 7 x Printable Photo Sheets</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Included paper sheets - A4, 6x4, A5, 7x5, 3.5x5, letter, legal </p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Included paper sheets - A4, 6x4, A5, 7x5, 3.5x5, letter, legal </p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Print upto 40 photos in a single sheet</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Print yourself or at Walmart, CVS, Walgreeds, drug stores, etc</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Use for online applications</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>No Ads</p>
+                 </div>
+                 <div class="list-item no-feature">
+                  <i class="fa fa-times"></i>
+                  <p>No Printing</p>
+                 </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h4 class="card-title pricing-card-title">Do it Yourself 🛠️</h4>
+              <p>We support you to edit and print yourself</p>
+              <button type="button" class="btn btn-blue-outline" (click)="getPhotoPlan('free')">
+                CREATE PHOTO
+              </button>
+              <div class="mt-4">
+                <span display="block" class="price-plan">FREE</span>
+                <p>-</p>
+              </div>
+              <div class="pricing-list">
+                <div class="list-item no-feature">
+                 <i class="fa fa-times"></i>
+                 <p>No Printing</p>
+                </div>
+                <div class="list-item no-feature">
+                  <i class="fa fa-times"></i>
+                  <p>No Compliance Check</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Free Immediate Download</p>
+                 </div>
+                 <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Manually Crop as per specification</p>
+                 </div>
+                 <!-- <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Manually Adjust lighting</p>
+                 </div> -->
+                 <!-- <div class="list-item">
+                  <i class="fa fa-check"></i>
+                  <p>Select 1 from A4, A3, +5 paper sizes</p>
+                 </div> -->
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</section>

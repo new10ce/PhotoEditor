@@ -1,0 +1,50 @@
+#services {
+    padding-top: 70px !important;
+    padding-bottom: 0px !important;
+  }
+
+
+
+/* Style the tab */
+.tab {
+    height: 300px;
+    margin-top: 30px;
+  }  
+  
+  .tab a, .tab button {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #607096;
+    background-color: inherit;
+    border: 0px;
+  }
+  
+  .tab i {
+    font-size: 15px;
+    color: #607096;
+    margin-right: 15px;
+  }
+  
+  .tab a:hover {
+    color: white;
+  }
+  
+  .tab a.active {
+    background-color: #4CAF50;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding: 20px 12px;
+  }
+
+  h5{
+      font-weight: 500;
+  }
+
+  .card .pay-status{
+      line-height: 2rem;
+  }
